@@ -1,0 +1,88 @@
+:root {
+  --primary: #2a9d8f;
+  --secondary: #264653;
+  --background: #f0f4f8;
+  --light: #fff;
+  --dark: #0a0f1c;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Segoe UI', sans-serif; line-height: 1.6; background: var(--background); color: var(--dark); }
+.container { width: 90%; max-width: 1200px; margin: auto; }
+
+header {
+  background: var(--light); padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky; top: 0; z-index: 1000;
+}
+.nav-container { display: flex; justify-content: space-between; align-items: center; }
+.logo { font-weight: bold; color: var(--primary); }
+
+.nav-links {
+  display: flex; gap: 1rem; list-style: none;
+}
+.nav-links a {
+  text-decoration: none; color: var(--dark); transition: color 0.3s;
+}
+.nav-links a:hover { color: var(--primary); }
+
+.burger { display: none; background: none; font-size: 1.5rem; }
+
+.hero {
+  background: linear-gradient(to right, var(--primary), var(--secondary));
+  color: white; padding: 4rem 0; text-align: center;
+}
+.hero .btn {
+  margin-top: 1rem; padding: 0.75rem 1.5rem;
+  background: var(--light); color: var(--primary);
+  text-decoration: none; border-radius: 5px;
+}
+
+.about, .clients, .services, .contact {
+  padding: 4rem 0; background: var(--light);
+}
+.about img, .card img {
+  width: 100%; border-radius: 8px; margin-top: 1rem;
+}
+.clients .client-logos {
+  display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-top: 1rem;
+}
+.clients img { border: 1px solid #ddd; border-radius: 4px; }
+
+.services .cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem; margin-top: 2rem;
+}
+.card {
+  background: var(--light); padding: 1rem;
+  border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.contact { text-align: center; background: var(--background); color: var(--dark); }
+.contact form {
+  display: grid; gap: 1rem; max-width: 600px; margin: auto;
+}
+.contact input, .contact textarea {
+  padding: 1rem; border: 1px solid #ccc; border-radius: 5px;
+}
+.contact button {
+  padding: 1rem; background: var(--primary); color: var(--light);
+  border: none; border-radius: 5px; cursor: pointer;
+}
+.email { margin-top: 1rem; font-size: 0.9rem; }
+
+footer {
+  padding: 2rem; text-align: center;
+  background: var(--secondary); color: var(--light);
+}
+
+/* Responsive Nav */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none; flex-direction: column; background: var(--light);
+    position: absolute; top: 60px; right: 20px; padding: 1rem;
+    border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  }
+  .nav-links.show { display: flex; }
+  .burger { display: block; }
+}
